@@ -1,4 +1,5 @@
-FROM 188413075412.dkr.ecr.eu-west-2.amazonaws.com/geo/tomcat85
+ARG AWS_ECR=
+FROM ${AWS_ECR}geo/tomcat85
 
 # Add default user called status that can access the status part of the manager app
 COPY tomcat-users.xml $CATALINA_HOME/conf/tomcat-users.xml
